@@ -1,97 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AetherFlare — Link Hub</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
-
-  <!-- main stylesheet -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Metadata for social preview (optional) -->
-  <meta name="description" content="AetherFlare — My digital universe. Connect with me on YouTube, TikTok, Instagram and Saweria.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Website Personal</title>
 </head>
 <body>
-  <!-- Canvas for falling stars / particles -->
-  <canvas id="stars-canvas" aria-hidden="true"></canvas>
-
-  <!-- Decorative gradient overlay -->
-  <div id="gradient-overlay" aria-hidden="true"></div>
-
-  <main class="wrap" role="main" aria-labelledby="site-title">
-    <section class="card" role="region" aria-label="AetherFlare link hub">
-      <header class="brand" role="banner">
-        <div class="avatar-wrap">
-          <!-- Avatar loads from /images/foto.jpg -->
-          <div class="avatar">
-            <img id="avatar-img" src="images/foto.jpg" alt="AetherFlare profile photo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23050707%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23A960FF%22 font-size=%2236%22 font-family=%22Inter%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>Upload foto</text></svg>';">
-          </div>
+    <div class="container">
+        <div class="theme-toggle">
+            <input type="checkbox" id="toggle-theme">
+            <label for="toggle-theme"></label>
         </div>
-
-        <div class="title-wrap">
-          <h1 id="site-title" class="site-title" aria-label="AetherFlare">
-            <span id="typed" class="typed">AetherFlare</span>
-          </h1>
-          <p class="subtitle">My Digital Universe • Connect with me</p>
+        <img src="assets/profile.jpg" alt="Profile" class="profile-pic">
+        <div class="social-buttons">
+            <a href="https://youtube.com/@aetherrblx1?si=r3xcs1_H093rFHDe" target="_blank">
+                <img src="assets/youtube.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.tiktok.com/@aetherrblx?_t=ZS-8yognyzQ30y&_r=1" target="_blank">
+                <img src="assets/tiktok.png" alt="TikTok" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/aether.flare?igsh=MWVzeGVmaHM1N2Zocw==" target="_blank">
+                <img src="assets/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://saweria.co/AetherFlare" target="_blank">
+                <img src="assets/saweria.png" alt="Saweria" class="social-icon">
+            </a>
         </div>
-      </header>
-
-      <!-- Links list -->
-      <nav class="links" aria-label="Links to social profiles">
-        <a class="link btn-black yt" href="https://youtube.com/@aetherrblx1?si=r3xcs1_H093rFHDe" target="_blank" rel="noopener noreferrer">
-          <span class="ico" aria-hidden="true">
-            <!-- Youtube icon -->
-            <svg width="26" height="26" viewBox="0 0 24 24"><path d="M10 15V9l5 3-5 3z" fill="white"/></svg>
-          </span>
-          <span class="label">YouTube</span>
-          <span class="meta">/ @aetherrblx1</span>
-        </a>
-
-        <a class="link btn-black tt" href="https://www.tiktok.com/@aetherrblx?_t=ZS-8yognyzQ30y&_r=1" target="_blank" rel="noopener noreferrer">
-          <span class="ico" aria-hidden="true">
-            <!-- TikTok icon -->
-            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M9 3v8.2a3 3 0 1 0 3-3V3a6 6 0 1 1-3 0z" fill="white"/></svg>
-          </span>
-          <span class="label">TikTok</span>
-          <span class="meta">@aetherrblx</span>
-        </a>
-
-        <a class="link btn-black ig" href="https://www.instagram.com/aether.flare?igsh=MWVzeGVmaHM1N2Zocw==" target="_blank" rel="noopener noreferrer">
-          <span class="ico" aria-hidden="true">
-            <!-- Instagram icon -->
-            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4.5 4.5 0 1 0 16.5 13 4.5 4.5 0 0 0 12 8.5z" fill="white"/></svg>
-          </span>
-          <span class="label">Instagram</span>
-          <span class="meta">@aether.flare</span>
-        </a>
-
-        <a class="link btn-black sv" href="https://saweria.co/AetherFlare" target="_blank" rel="noopener noreferrer">
-          <span class="ico" aria-hidden="true">
-            <!-- Saweria / coffee icon -->
-            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M18 8h1a3 3 0 0 1 0 6h-1v1a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V8h13zM6 6h10v1a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V6z" fill="white"/></svg>
-          </span>
-          <span class="label">Support</span>
-          <span class="meta">Saweria • AetherFlare</span>
-        </a>
-      </nav>
-
-      <div class="controls">
-        <button class="mode-pill" id="modeGradient" aria-pressed="false" title="Gradient background">Gradient</button>
-        <button class="mode-pill" id="modeParticles" aria-pressed="false" title="Starfield background">Starfield</button>
-        <button class="mode-pill" id="modeVignette" aria-pressed="false" title="Vignette background">Vignette</button>
-      </div>
-
-      <footer class="footer">
-        <div class="footer-line" aria-hidden="true"></div>
-        <div class="foot-text">© <span id="year"></span> • AetherFlare</div>
-      </footer>
-    </section>
-  </main>
-
-  <!-- main script -->
-  <script src="script.js"></script>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
